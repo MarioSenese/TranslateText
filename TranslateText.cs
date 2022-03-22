@@ -1,4 +1,4 @@
-// Traduciamo ciò che non è stato ancora tradotto
+// "TranslateText" function
 public string TranslateText (string text) {
 
 	string result = String.Empty;
@@ -7,8 +7,8 @@ public string TranslateText (string text) {
 
 	try {
 
-		string fromLanguage = "it"; 
-		string toLanguage = "de";
+		string fromLanguage = "FROM_LANGUAGE"; // es: it
+		string toLanguage = "TO_LANGUAGE"; // es: en
 		string url = String.Format("https://translate.googleapis.com/translate_a/single?client=gtx&sl={0}&tl={1}&dt=t&q={2}", fromLanguage, toLanguage, Uri.EscapeUriString(text));
 
 		string res = webClient.DownloadString(url);
