@@ -9,7 +9,12 @@ public string TranslateText (string text) {
 
 		string fromLanguage = "FROM_LANGUAGE"; // es: it
 		string toLanguage = "TO_LANGUAGE"; // es: en
-		string url = String.Format("https://translate.googleapis.com/translate_a/single?client=gtx&sl={0}&tl={1}&dt=t&q={2}", fromLanguage, toLanguage, Uri.EscapeUriString(text));
+		
+		string _url1 = "https://clients5.google.com/translate_a/t?client=dict-chrome-ex&sl={0}&tl={1}&q={2}";
+		// or
+		string _url2 = "https://translate.googleapis.com/translate_a/single?client=gtx&sl={0}&tl={1}&dt=t&q={2}";
+		
+		string url = String.Format(_url2, fromLanguage, toLanguage, Uri.EscapeUriString(text));
 
 		string res = webClient.DownloadString(url);
 		var jsonData = new JavaScriptSerializer().Deserialize<List<dynamic>>(res); // Dati json
