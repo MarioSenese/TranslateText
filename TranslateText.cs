@@ -28,8 +28,6 @@ public string TranslateText (string text) {
 
 			translation += string.Format(" {0}", Convert.ToString(translationLineString.Current));
 
-			Javascript.ConsoleLog(translation.ToString());
-
 		}
 
 		if(translation.Length > 1) {
